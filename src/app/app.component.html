@@ -64,7 +64,7 @@
             ></p-button>
           </div>
         </div>
-        <div>
+        <div class="input__search">
           <div class="card w-full">
             <span class="p-input-icon-left w-full">
               <i class="pi pi-search"></i>
@@ -191,6 +191,39 @@
         </div>
       </article>
     </section>
+  </div>
+  <div class="container my-3">
+    <div class="card w-full mb-4">
+      <span class="p-input-icon-left w-full">
+        <i class="pi pi-search"></i>
+        <input
+          type="text"
+          class="w-full"
+          placeholder="Search post from jsonplaceholder..."
+          pInputText
+          (input)="onSearchInputChange($any($event.target).value)"
+        />
+      </span>
+      @if(loading) {
+      <div class="card mt-4">
+        <p-progressBar
+          mode="indeterminate"
+          [style]="{ height: '6px' }"
+        ></p-progressBar>
+      </div>
+      }
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <!-- {{ posts.length }} -->
+      @for (post of posts; track post.id) {
+      <div class="card flex align-items-center justify-content-center gap-1">
+        <div class="text-xl text-primary">{{ post.id }})</div>
+        <h3>{{ post.body }}</h3>
+      </div>
+      }@empty {
+      <li>No post found.</li>
+      }
+    </div>
   </div>
 </main>
 

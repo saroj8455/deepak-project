@@ -1,0 +1,4 @@
+.post__title::first-letter {
+  color: red;
+  font-size: 2rem;
+}
