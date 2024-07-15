@@ -103,3 +103,9 @@ article {
 p {
   font-size: var(--fs-400);
 }
+
+/* custom style code goes here */
+.app__landing {
+  /* background-color: red; */
+  /* padding: 2rem; */
+}
